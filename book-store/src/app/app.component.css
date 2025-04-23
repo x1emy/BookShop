@@ -1,0 +1,42 @@
+/* Navigation Menu Styles */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+}
+
+li {
+    margin: 0;
+}
+
+li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+li a:hover {
+    background: #34495e;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+li a:active {
+    transform: translateY(0);
+}
+
+/* Active Route Styling */
+li a[routerLinkActive="active"] {
+    background: #3498db;
+    color: #ffffff;
+}

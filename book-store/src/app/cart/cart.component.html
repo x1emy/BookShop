@@ -1,0 +1,34 @@
+<div class="cart-container">
+    <h2 class="cart-header">Your Shopping Cart</h2>
+    
+    <div *ngIf="loaded; else loadingBlock">
+      <div *ngIf="books.length > 0; else emptyCart">
+        <div *ngFor="let book of books" class="general-card-posts">
+          <h3 class="card-posts">{{book.id}} - {{book.title}}</h3>
+          <button class="button-return" (click)="remeveBook(book)">
+            Remove from Cart
+          </button>
+        </div>
+        
+        <div class="cart-total">
+          <span class="cart-total-text">Total Items:</span>
+          <span class="cart-total-amount">{{books.length}}</span>
+        </div>
+        
+        <button class="checkout-button">Proceed to Checkout</button>
+      </div>
+      
+      <ng-template #emptyCart>
+        <div class="empty-cart">
+          Your cart is empty. Browse our books to add items to your cart.
+        </div>
+      </ng-template>
+    </div>
+    
+    <ng-template #loadingBlock>
+      <div class="loading-block">
+        <div class="loading-spinner"></div>
+        <p>Loading your cart...</p>
+      </div>
+    </ng-template>
+  </div>
